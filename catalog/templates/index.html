@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+
     {% extends "base_generic.html" %}
 
 {% block content %}
@@ -20,8 +14,8 @@
     <li><strong>Copies:</strong> {{ num_instances }}</li>
     <li><strong>Copies available:</strong> {{ num_instances_available }}</li>
     <li><strong>Authors:</strong> {{ num_authors }}</li>
+    <li><strong>Genres:</strong> {{ num_genres }}</li>
+      <li><strong>Books serch world '{{ search_word }}':</strong> {{ num_books_with_word }}</li>
   </ul>
 
 {% endblock %}
-</body>
-</html>
