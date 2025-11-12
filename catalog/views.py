@@ -13,6 +13,9 @@ def index(request):
     num_instances_available=BookInstance.objects.filter(status__exact='a').count()
     num_authors=Author.objects.count()  # Метод 'all()' применён по умолчанию.
 
+    num_visits = request.session.get('num_visits', 0)
+    request.session['num_visits'] = num_visits + 1
+
     num_genres = Genre.objects.count()
     search_word = 'the'  # Можно заменить на любое слово
     num_books_with_word = Book.objects.filter(title__icontains=search_word).count()
@@ -30,6 +33,7 @@ def index(request):
             'num_genres': num_genres,
             'num_books_with_word': num_books_with_word,
             'search_word': search_word,
+            'num_visits': num_visits,
         },
     )
 
