@@ -104,6 +104,9 @@ class Author(models.Model):
         """
         return '%s, %s' % (self.last_name, self.first_name)
 
+    class Meta:
+        ordering = ['last_name']
+
 from django.db.models import UniqueConstraint
 from django.db.models.functions import Lower
 
