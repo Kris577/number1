@@ -34,3 +34,8 @@ def index(request):
             'search_word': search_word,
         },
     )
+
+from django.views import generic
+
+class BookListView(generic.ListView):
+    model = Book
